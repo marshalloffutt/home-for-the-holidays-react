@@ -5,7 +5,7 @@ class EditHoliday extends React.Component {
   render() {
     return (
       <div className='EditHoliday'>
-        <h2>EditHoliday Component</h2>
+        <h3>Edit Holiday Page</h3>
       </div>
     );
   }

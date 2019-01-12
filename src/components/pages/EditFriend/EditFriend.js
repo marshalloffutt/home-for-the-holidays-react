@@ -5,7 +5,7 @@ class EditFriend extends React.Component {
   render() {
     return (
       <div className='EditFriend'>
-        <h2>EditFriend Component</h2>
+        <h3>Edit Friend</h3>
       </div>
     );
   }

@@ -11,7 +11,7 @@ class Holidays extends React.Component {
   render() {
     return (
       <div className='Holidays'>
-        <h2>Holidays Component</h2>
+        <h3>Holidays</h3>
         <Button className="btn btn-danger mt-5" id="12345" onClick={this.holidayDetailsView}>Go to Holiday Deets</Button>
       </div>
     );
