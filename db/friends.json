@@ -1,0 +1,66 @@
+{
+  "friend1": {
+    "name": "Thomas Jefferson",
+    "phoneNumber": "1112223333",
+    "email": "thomas@gmail.com",
+    "relationship": "friend",
+    "isAvoiding": true,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  },
+  "friend2": {
+    "name": "Harriet Tubman",
+    "phoneNumber": "1122223333",
+    "email": "harriet@gmail.com",
+    "relationship": "friend",
+    "isAvoiding": true,
+    "uid": "112233"
+  },
+  "friend3": {
+    "name": "Clint Eastwood",
+    "phoneNumber": "3334445555",
+    "email": "clint@gmail.com",
+    "relationship": "friend",
+    "isAvoiding": true,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  },
+  "friend4": {
+    "name": "Enimem",
+    "phoneNumber": "4434456666",
+    "email": "the_real_marshall@gmail.com",
+    "relationship": "friend",
+    "isAvoiding": true,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  },
+  "friend5": {
+    "name": "Ringo Starr",
+    "phoneNumber": "5556667777",
+    "email": "starr_time@applerecords.com",
+    "relationship": "friend",
+    "isAvoiding": false,
+    "uid": "112233"
+  },
+  "friend6": {
+    "name": "Taylor Swift",
+    "phoneNumber": "1112223334",
+    "email": "tswiss@yomamma.com",
+    "relationship": "friend",
+    "isAvoiding": true,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  },
+  "friend7": {
+    "name": "Bob Marley",
+    "phoneNumber": "57385738",
+    "email": "bobbie@onelove.com",
+    "relationship": "professor",
+    "isAvoiding": true,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  },
+  "friend8": {
+    "name": "Britney Spears",
+    "phoneNumber": "3434534",
+    "email": "britbrit@spears.com",
+    "relationship": "friend",
+    "isAvoiding": false,
+    "uid": "RvOsGfSw77VBdPLkkuQmVr01YS12"
+  }
+}
