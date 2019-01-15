@@ -1,0 +1,11 @@
+{
+  "friends": {
+    "name": "George"
+  },
+  "holidays": {
+    "name": "May Day"
+  },
+    "holidayFriends": {
+      "holidayId": "holiday1"
+    }
+}
