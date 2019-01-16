@@ -21,6 +21,9 @@ const getAllFriends = uid => new Promise((resolve, reject) => {
     });
 });
 
+const deleteFriendAxios = friendId => axios.delete(`${firebaseUrl}/friends/${friendId}.json`);
+
 export default {
   getAllFriends,
+  deleteFriendAxios,
 };

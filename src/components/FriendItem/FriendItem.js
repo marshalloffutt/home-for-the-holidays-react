@@ -5,6 +5,13 @@ import {
 import './FriendItem.scss';
 
 class FriendItem extends React.Component {
+  deleteFriendEvent = (e) => {
+    e.preventDefault();
+    const friendId = e.target.id;
+    const { deleteFriend } = this.props;
+    deleteFriend(friendId);
+  }
+
   render() {
     const { friend } = this.props;
     return (
@@ -14,7 +21,9 @@ class FriendItem extends React.Component {
           <CardText>{friend.phoneNumber}</CardText>
           <CardText>{friend.email}</CardText>
           <CardText>{friend.relationship}</CardText>
-          <Button>Edit</Button>
+          <div className="buttons">
+            <Button color="danger" id={friend.id} onClick={this.deleteFriendEvent}>Delete</Button>
+          </div>
         </Card>
       </Col>
     );

@@ -32,6 +32,14 @@ class Friends extends React.Component {
     this.props.history.push(`/friends/${friendId}/edit`);
   }
 
+  deleteFriend = (friendId) => {
+    friendRequests.deleteFriendAxios(friendId)
+      .then(() => {
+        this.getAndDisplayFriends();
+      })
+      .catch(err => console.error('error in deleting friend', err));
+  }
+
   render() {
     const {
       friends,
@@ -42,6 +50,7 @@ class Friends extends React.Component {
         <FriendItem
           key={friend.id}
           friend={friend}
+          deleteFriend={this.deleteFriend}
         />
       ))
     );
