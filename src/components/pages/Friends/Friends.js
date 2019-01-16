@@ -1,8 +1,30 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import authRequests from '../../../helpers/data/authRequests';
+import friendRequests from '../../../helpers/data/friendRequests';
 import './Friends.scss';
 
 class Friends extends React.Component {
+  state = {
+    friends: [],
+  }
+
+  componentDidMount() {
+    this.getAndDisplayFriends();
+  }
+
+  getAndDisplayFriends = () => {
+    const uid = authRequests.getCurrentUid();
+    friendRequests
+      .getAllFriends(uid)
+      .then((results) => {
+        const friends = results;
+        this.setState({
+          friends,
+        });
+      })
+      .catch(err => console.error('error in getting friends', err));
+  }
+
   editFriendView = (e) => {
     const friendId = e.target.id;
     this.props.history.push(`/friends/${friendId}/edit`);
@@ -11,8 +33,8 @@ class Friends extends React.Component {
   render() {
     return (
       <div className='Friends'>
-        <h2>Friends Component</h2>
-          <Button className="btn btn-danger mt-5" id="12345" onClick={this.editFriendView}>Edit Friend</Button>
+        <h2>Your Friends</h2>
+          <div className="container"></div>
       </div>
     );
   }
