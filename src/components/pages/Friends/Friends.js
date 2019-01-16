@@ -1,6 +1,7 @@
 import React from 'react';
 import authRequests from '../../../helpers/data/authRequests';
 import friendRequests from '../../../helpers/data/friendRequests';
+import FriendItem from '../../FriendItem/FriendItem';
 import './Friends.scss';
 
 class Friends extends React.Component {
@@ -31,10 +32,25 @@ class Friends extends React.Component {
   }
 
   render() {
+    const {
+      friends,
+    } = this.state;
+
+    const friendItemComponents = friendsArray => (
+      friendsArray.map(friend => (
+        <FriendItem
+          key={friend.id}
+          friend={friend}
+        />
+      ))
+    );
+
     return (
       <div className='Friends'>
         <h2>Your Friends</h2>
-          <div className="container"></div>
+          <div className="container d-flex">
+            {friendItemComponents(friends)}
+          </div>
       </div>
     );
   }
