@@ -1,18 +1,57 @@
 import React from 'react';
-import { Button } from 'reactstrap';
+import { Row } from 'reactstrap';
+import authRequests from '../../../helpers/data/authRequests';
+import friendRequests from '../../../helpers/data/friendRequests';
+import FriendItem from '../../FriendItem/FriendItem';
 import './Friends.scss';
 
 class Friends extends React.Component {
+  state = {
+    friends: [],
+  }
+
+  componentDidMount() {
+    this.getAndDisplayFriends();
+  }
+
+  getAndDisplayFriends = () => {
+    const uid = authRequests.getCurrentUid();
+    friendRequests
+      .getAllFriends(uid)
+      .then((results) => {
+        const friends = results;
+        this.setState({
+          friends,
+        });
+      })
+      .catch(err => console.error('error in getting friends', err));
+  }
+
   editFriendView = (e) => {
     const friendId = e.target.id;
     this.props.history.push(`/friends/${friendId}/edit`);
   }
 
   render() {
+    const {
+      friends,
+    } = this.state;
+
+    const friendItemComponents = friendsArray => (
+      friendsArray.map(friend => (
+        <FriendItem
+          key={friend.id}
+          friend={friend}
+        />
+      ))
+    );
+
     return (
-      <div className='Friends'>
-        <h2>Friends Component</h2>
-          <Button className="btn btn-danger mt-5" id="12345" onClick={this.editFriendView}>Edit Friend</Button>
+      <div className="mx-auto">
+        <h2 className="text-center">Your Friends</h2>
+            <Row className="justify-content-center">
+              {friendItemComponents(friends)}
+            </Row>
       </div>
     );
   }

@@ -73,7 +73,6 @@ class App extends React.Component {
         <BrowserRouter>
           <React.Fragment>
             <Mavbar isAuthed={authed} logoutClicky={logoutClicky} />
-            <div className="container">
               <div className="row">
                 <Switch>
                   <PrivateRoute exact path='/' component={Home} authed={this.state.authed} />
@@ -89,7 +88,6 @@ class App extends React.Component {
                   <PublicRoute path='/auth' component={Auth} authed={this.state.authed} />
                 </Switch>
               </div>
-            </div>
           </React.Fragment>
         </BrowserRouter>
       </div>
