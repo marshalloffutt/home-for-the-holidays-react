@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row } from 'reactstrap';
 import authRequests from '../../../helpers/data/authRequests';
 import friendRequests from '../../../helpers/data/friendRequests';
 import FriendItem from '../../FriendItem/FriendItem';
@@ -46,11 +47,11 @@ class Friends extends React.Component {
     );
 
     return (
-      <div className='Friends'>
-        <h2>Your Friends</h2>
-          <div className="container d-flex">
-            {friendItemComponents(friends)}
-          </div>
+      <div className="mx-auto">
+        <h2 className="text-center">Your Friends</h2>
+            <Row className="justify-content-center">
+              {friendItemComponents(friends)}
+            </Row>
       </div>
     );
   }
